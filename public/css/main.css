@@ -1,0 +1,50 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.serie {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.serie > :not(:last-child) {
+  margin-bottom: .3em;
+}
+
+.ticket {
+  font-family: Courier New, Courier, monospace;
+  font-size: .8rem;
+  line-height: 1.5;
+  background-color: olivedrab;
+  display: grid;
+  grid-template-columns: repeat(9, 1.6em);
+  grid-template-rows: repeat(3, 1.5em);
+  grid-gap: .1em;
+  padding: .2em;
+  border: .05em solid #000;
+  border-radius: .2em;
+}
+
+.ticket__number {
+  position: relative;
+  z-index: 100;
+  text-align: center;
+  border-radius: 15%;
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform .4s;
+}
+
+.ticket__number.-is-empty {
+  background-color: #333333;
+}
+
+.ticket__number.-is-marked {
+  position: relative;
+  background-color: #3366cc;
+  color: snow;
+  transform: scale(1.5);
+  z-index: 200;
+}
