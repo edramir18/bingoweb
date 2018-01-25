@@ -34,17 +34,23 @@
   border-radius: 15%;
   background-color: #fff;
   cursor: pointer;
-  transition: transform .4s;
 }
 
 .ticket__number.-is-empty {
   background-color: #333333;
+  cursor: initial;
 }
 
 .ticket__number.-is-marked {
   position: relative;
   background-color: #3366cc;
   color: snow;
-  transform: scale(1.5);
   z-index: 200;
+  animation: .75s ease-in-out reverse button-marked;
+}
+
+@keyframes button-marked {
+  to {
+    transform: scale(2);
+  }
 }

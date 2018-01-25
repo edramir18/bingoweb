@@ -31,17 +31,21 @@
     border-radius: 15%; 
     background-color: #fff;
     cursor: pointer;
-    //transform: scale(1, 1);
-    transition: transform .4s;
     &.-is-empty{
-      background-color: #333333;    
+      background-color: #333333;
+      cursor: initial; 
     }
     &.-is-marked{
       position: relative;
       background-color: #3366cc;
-      color: snow;      
-      transform: scale(1.5);
+      color: snow; 
       z-index: 200;
+      animation: .75s ease-in-out reverse button-marked
     }
   }  
+}
+@keyframes button-marked {
+  to {
+    transform: scale(2.0);
+  }
 }
